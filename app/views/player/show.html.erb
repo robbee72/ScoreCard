@@ -1,0 +1,9 @@
+<h1>Showing selected player</h1>
+  <p>
+    Name: <%= @player.name %>
+  </p>
+  <p>
+    Ranking: <%= @player.ranking %>
+  </p>
+<%= link_to "Edit this player", edit_player_path(@player) %> |
+<%= link_to "Back to players listing", players_path %>

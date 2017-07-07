@@ -1,1 +1,23 @@
-<h1 align="center"> Player ranking </h1>
+<h1>Create an player</h1>
+  <%= form_for @player do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :ranking %><br/>
+    <%= f.text_area :ranking %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+  <% if @player.errors.any? %>
+  <h2>The following errors prevented the player from getting created</h2>
+    <ul>
+      <% @player.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    <%= link_to "Back to players listing", players_path %>
