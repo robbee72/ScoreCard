@@ -6,7 +6,7 @@
   </p>
   <p>
     <%= f.label :ranking %><br/>
-    <%= f.text_area :ranking %>
+    <%= f.number_field :ranking, max: 100 %>
   </p>
   <p>
     <%= f.submit %>

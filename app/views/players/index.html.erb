@@ -1,0 +1,22 @@
+<h4>Listing of all Players</h4>
+ <p>
+   <%= link_to "Create new player", new_player_path %>
+ </p>
+ <table class="table table-bordered table-striped">
+   <thead>
+     <tr>
+       <th><%= sort_link "name" %></th>
+       <th><%= sort_link "ranking" %></th>
+     </tr>
+    </thead>
+      <tbody>
+        <% @player.each do |player| %>
+         <tr>
+           <td><%=  player.name %></td>
+           <td><%=  player.ranking %></td>
+           <td><%= link_to 'Edit', edit_player_path(player) %></td>
+           <td><%= link_to 'Show', player_path(player) %></td>
+         </tr>
+       <% end %>
+     </tbody>
+ </table>
